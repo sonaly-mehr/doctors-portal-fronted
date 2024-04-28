@@ -13,12 +13,12 @@ const DentalCare = () => {
       <div className="basis-1/2 ">
         <h2 className="heading">Exceptional Dental Care, on Your Terms</h2>
         <p className="text-base mt-5 mb-7">
-          It is a long established fact that a reader will be distracted by the
+          {`It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsumis that it has a more-or-less normal distribution of
           letters,as opposed to using 'Content here, content here', making it
           look like readable English. Many desktop publishing packages and web
-          page
+          page`}
         </p>
         <Link href="/appointment">
           <Button text="GET STARTED" px="4" py="3" />

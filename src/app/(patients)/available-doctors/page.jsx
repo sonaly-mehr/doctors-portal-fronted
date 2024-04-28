@@ -1,5 +1,4 @@
 import React from "react";
-// import AvalaibleDoctorsQuery from "@/components/Ui/AvalaibleDoctorsQuery";
 import { getAvailableDoctors } from "@/services/getAvailableDoctors";
 import AvailableDoctorsTable from "@/components/Ui/Table/AvailableDoctorsTable";
 

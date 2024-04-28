@@ -50,9 +50,9 @@ const Hero = () => {
               data-aos="fade-up"
               data-aos-duration="1200"
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting
+              {`Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the
+              ever since the`}
             </p>
             <Link
               href="/appointment"
