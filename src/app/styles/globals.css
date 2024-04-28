@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:focus{
+    outline: none;
+}
+.slick-slide{
+    /* width: 95% !important; */
+/* margin: px; */
+margin: 10px 0;
+}
+.slick-slide>div{
+    width: 92%;
+    margin: auto;
+}
+.nav_links{
+    @apply flex gap-8 items-center
+}
+.nav_links>li>a{
+    @apply text-base
+}
+.heading{
+    @apply text-5xl text-secondary font-bold leading-[60px]
+}
+.subHeading{
+    @apply font-bold text-xl text-primary
+}
+.introHeading{
+    @apply text-secondary text-4xl capitalize my-2
+}
+.paragraph{
+    @apply text-base text-secondary
+}
+.button{
+    @apply font-bold text-sm text-white
+}
+.gradient__effect{
+    background: linear-gradient(90deg, #19D3AE -22.5%, #0FCFEC 120.83%);
+}
+.dark__bg{
+    @apply bg-secondary
+}
+.formInput{
+    @apply border-[1px] border-solid border-[#CFCFCF] rounded-lg px-3 py-2
+}
