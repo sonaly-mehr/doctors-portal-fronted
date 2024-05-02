@@ -1,4 +1,5 @@
-import { formatCurrency } from "@/lib/formatters"
+
+import { formatCurrency } from "@/lib/formatter"
 import { notFound } from "next/navigation"
 import Stripe from "stripe"
 
