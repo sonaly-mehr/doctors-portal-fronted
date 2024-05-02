@@ -16,7 +16,7 @@ const Hero = () => {
       descp: "Lorem Ipsum is simply dummy text of the pri",
       classN: "gradient__effect",
       dataAos: "fade-right",
-      dataAosDuration: '1000'
+      dataAosDuration: "1000",
     },
     {
       icon: location,
@@ -30,21 +30,21 @@ const Hero = () => {
       descp: "+000 123 456789",
       classN: "gradient__effect",
       dataAos: "fade-left",
-      dataAosDuration: '1000'
+      dataAosDuration: "1000",
     },
   ];
   return (
     <div>
-      <div className={`${styles.hero__bg} h-screen`}>
-        <div className="w-[90%] m-auto flex justify-between items-center py-40">
-          <div className="basis-1/2 mr-4">
-            <h2
-              className="heading w-[90%]"
+      <div className={`${styles.hero__bg} lg:h-screen`}>
+        <div className="w-[90%] m-auto flex flex-col lg:flex-row lg:justify-between items-center py-10 gap-8 lg:gap-0 lg:py-40">
+          <div className="basis-1/2 mr-4 order-2 lg:order-1">
+            <h1
+              className="heading lg:w-[90%]"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
               Your New Smile Starts Here
-            </h2>
+            </h1>
             <p
               className="paragraph mt-3 mb-5"
               data-aos="fade-up"
@@ -68,21 +68,22 @@ const Hero = () => {
             data-aos-duration="800"
             data-aos-easing="ease-in-out"
             data-aos-once="false"
+            className="order-1 lg:order-2"
           >
             <Image src={chair} alt="" />
           </div>
         </div>
       </div>
-      <div className="px-4 flex gap-4">
+      <div className="px-4 flex flex-col lg:flex-row gap-4">
         {cards?.map(({ icon, heading, descp, classN }, index) => (
           <div
             key={index}
-            className={`basis-1/3 flex gap-5 ${classN} items-center px-7 py-10 rounded-lg`}
+            className={`basis-1/3 flex gap-5 ${classN} items-center px-4 lg:px-7 py-5 lg:py-10 rounded-lg`}
             data-aos={`${cards?.dataAos && dataAos}`}
             data-aos-duration={`${cards?.dataAosDuration && dataAosDuration}`}
           >
             <div>
-              <Image src={icon} alt="" />
+              <Image src={icon} alt="" className="w-[50px] lg:-[150px]" />
             </div>
             <div>
               <h5 className="font-bold text-xl text-white">{heading}</h5>

@@ -48,13 +48,13 @@ const SignUpForm = () => {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={`${styles.form__shaddow} w-[35%] m-auto bg-white rounded-2xl px-10 py-8`}
+        className={`${styles.form__shaddow} w-[90%] lg:w-[35%] m-auto bg-white rounded-2xl px-5 lg:px-10 py-6 lg:py-8`}
       >
         <span className="text-xl flex font-medium justify-center mb-6">
           Sign Up
         </span>
         <div className="flex flex-col gap-3 w-full">
-          <div className="flex gap-3">
+          <div className="flex flex-col lg:flex-row gap-3">
           <div className="flex flex-col gap-1">
             <label htmlFor="" className="text-sm">
               Full Name
@@ -80,7 +80,7 @@ const SignUpForm = () => {
           </div>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-col lg:flex-row gap-3">
           <div className="flex flex-col gap-1">
             <label htmlFor="" className="text-sm">
               Password
@@ -89,6 +89,7 @@ const SignUpForm = () => {
               type="password"
               {...register("password", { required: true })}
               className="formInput"
+              placeholder="Enter password"
             />
           </div>
 
@@ -116,7 +117,7 @@ const SignUpForm = () => {
             />
           </div>
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 mb-1">
             <label htmlFor="gender" className="text-sm">
               Gender
             </label>
@@ -132,7 +133,7 @@ const SignUpForm = () => {
             </select>
           </div>
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 mb-1">
             <label htmlFor="" className="text-sm">
               Date Of Birth
             </label>
@@ -144,7 +145,7 @@ const SignUpForm = () => {
             />
           </div>
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 mb-1">
             <label htmlFor="" className="text-sm">
               Emergency Contact
             </label>

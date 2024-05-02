@@ -23,7 +23,7 @@ const LoginFrorm = () => {
 
   return (
     <div
-      className={`${styles.form__shaddow} w-[30%] m-auto bg-white rounded-2xl p-10`}
+      className={`${styles.form__shaddow} w-[90%] lg:w-[30%] m-auto bg-white rounded-2xl p-6 lg:p-10`}
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <span className="text-xl flex font-medium justify-center mb-6">
@@ -50,6 +50,7 @@ const LoginFrorm = () => {
               type="password"
               {...register("password", { required: true })}
               className="formInput"
+              placeholder="Enter password"
             />
           </div>
         </div>
@@ -72,7 +73,7 @@ const LoginFrorm = () => {
       </form>
       <div>
         <span
-          className={`text-secondary uppercase block text-center mt-4 mb-6 ${styles.before__after}`}
+          className={`text-secondary uppercase block text-center mt-4 mb-6 z-50 ${styles.before__after}`}
         >
           OR
         </span>

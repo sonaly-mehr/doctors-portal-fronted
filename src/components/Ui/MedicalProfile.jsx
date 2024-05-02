@@ -53,26 +53,26 @@ const MedicalProfile = ({ session }) => {
         <h5 className="font-semibold text-lg mb-2">Medical Profile:</h5>
 
         <ul className="flex flex-col gap-2 text-gray-600">
-          <li className="flex gap-3">
+          <li className="flex gap-3 items-center">
             <FaTransgender className="text-primary" />{" "}
             {profile?.medicalProfile?.gender}
           </li>
-          <li className="flex gap-3">
+          <li className="flex gap-3 items-center">
             {" "}
             <CiCalendarDate className="text-primary" />
             {profile?.medicalProfile?.dob}
           </li>
-          <li className="flex gap-3">
+          <li className="flex gap-3 items-center">
             {" "}
             <MdContactPhone className="text-primary" />
             {profile?.medicalProfile?.emergencyContact}
           </li>
-          <li className="flex gap-3">
+          <li className="flex gap-3 items-center">
             {" "}
             <SiStatuspage className="text-primary" />
             {profile?.medicalProfile?.profileStatus}
           </li>
-          <li className="flex gap-3">
+          <li className="flex gap-3 items-center">
             {" "}
             <FaRegAddressCard className="text-primary" />
             {profile?.medicalProfile?.address}

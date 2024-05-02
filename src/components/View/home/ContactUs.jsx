@@ -4,8 +4,8 @@ import Button from '@/components/Ui/Button';
 
 const ContactUs = () => {
     return (
-        <div className={`${styles.contact__bg} py-16 `}>
-            <div className='w-[30%] m-auto'>
+        <div className={`${styles.contact__bg} py-14 lg:py-16 `}>
+            <div className='w-[90%] lg:w-[30%] m-auto'>
                 <div className='text-center'>
                 <h6 className='subHeading'>Contact Us</h6>
                 <p className='text-white text-4xl capitalize my-2'>Stay connected with us</p>

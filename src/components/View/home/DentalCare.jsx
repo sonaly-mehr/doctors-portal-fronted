@@ -5,7 +5,7 @@ import Button from "@/components/Ui/Button";
 import Link from "next/link";
 const DentalCare = () => {
   return (
-    <div className="w-[70%] m-auto flex gap-8 items-center pb-40">
+    <div className="w-[90%] lg:w-[70%] m-auto flex flex-col lg:flex-row gap-8  lg:items-center pb-20 lg:pb-40">
       <div className="basis-1/2">
         <Image src={treatment} alt="" unoptimized={true} />
       </div>

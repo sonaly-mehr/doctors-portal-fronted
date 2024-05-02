@@ -24,10 +24,10 @@ const Services = () => {
         }
     ]
     return (
-        <div className='px-4 text-center my-32'>
+        <div className='px-4 text-center my-20 lg:my-32'>
             <h6 className='subHeading'>OUR SERVICES</h6>
             <p className='introHeading'>Services We Provide</p>
-            <div className='flex gap-6 mt-16'>
+            <div className='flex flex-col lg:flex-row gap-6 mt-16'>
                 {
                    services.map((service, index)=> (
                     <div key={index} className={`${styles.box__shaddow} bg-white p-8 rounded-lg hover:scale-[1.05] transition-all duration-100 cursor-pointer`}>

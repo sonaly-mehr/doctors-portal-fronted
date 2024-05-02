@@ -86,13 +86,13 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <div className="mt-16 mb-10">
+      <div className="mt-5 lg:mt-16 lg:mb-10">
         <Slider {...settings}>
           {
             testimonials?.map((testimonial)=> (
               <div key={testimonial?.id} className="w-[95%] p-5 rounded-[18px] bg-white shadow-[3px_4px_10px_2px_rgb(0,0,0,0.05)]">
               <p>{testimonial?.review}</p>
-              <div className="flex gap-3 mt-8">
+              <div className="flex gap-3 lg:mt-8">
                 <div>
                   <Image src={client} alt=""/>
                 </div>

@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "@material-tailwind/react";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { Button } from "@material-tailwind/react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -10,13 +10,17 @@ import { useCreateAvailableServiceMutation } from "@/redux/api/availableServiceA
 
 const CreateAvailableServiceForm = ({ services, doctors, slots }) => {
   const router = useRouter();
+  const [inputDate, setInputDate] = useState('');
+
+  const date = (new Date(inputDate)).toDateString()
+  // console.log("input date-", date)
 
   const [createAvailableService] = useCreateAvailableServiceMutation();
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (value) => {
     const options = {
-      slotDate: value.slotDate,
+      slotDate: date,
       availableSeats: value.availableSeats,
       fees: value.fees,
       serviceId: value.serviceId,
@@ -52,6 +56,7 @@ const CreateAvailableServiceForm = ({ services, doctors, slots }) => {
           type="date"
           label="Slot Date"
           {...register("slotDate", { required: true })}
+          onChange={(e)=> setInputDate(e.target.value)}
         />
         <Input
           type="number"

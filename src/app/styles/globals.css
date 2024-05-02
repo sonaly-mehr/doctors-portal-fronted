@@ -16,22 +16,22 @@ margin: 10px 0;
     margin: auto;
 }
 .nav_links{
-    @apply flex gap-8 items-center
+    @apply md:flex gap-8 md:items-center
 }
 .nav_links>li>a{
     @apply text-base
 }
 .heading{
-    @apply text-5xl text-secondary font-bold leading-[60px]
+    @apply text-4xl lg:text-5xl text-secondary font-bold lg:leading-[60px]
 }
 .subHeading{
     @apply font-bold text-xl text-primary
 }
 .introHeading{
-    @apply text-secondary text-4xl capitalize my-2
+    @apply text-secondary text-3xl lg:text-4xl capitalize my-2
 }
 .paragraph{
-    @apply text-base text-secondary
+    @apply text-sm lg:text-base leading-[22px] lg:leading-[24px] text-secondary
 }
 .button{
     @apply font-bold text-sm text-white
@@ -44,4 +44,7 @@ margin: 10px 0;
 }
 .formInput{
     @apply border-[1px] border-solid border-[#CFCFCF] rounded-lg px-3 py-2
+}
+.StripeElement{
+width: 100% !important;
 }

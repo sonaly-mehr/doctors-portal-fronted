@@ -1,19 +1,36 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@material-tailwind/react";
 import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { RxCross2 } from "react-icons/rx";
 
 const Header = ({ navLinks, session }) => {
   const router = useRouter();
-  console.log("session", session)
+  console.log("session", session);
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <div className="w-[90%] m-auto flex justify-between py-5">
+    <div className="w-[90%] m-auto flex justify-between py-5 relative">
       <div>
-        <span className="text-lg text-black">Doctors Portal</span>
+        <span className="text-base lg:text-xl font-black text-[#19D3AE] uppercase">
+          Doctors Portal
+        </span>
       </div>
-      <ul className="nav_links">
+      {/* Hamburger-menu */}
+      <HiOutlineMenuAlt3
+        className="text-black text-3xl block md:hidden cursor-pointer"
+        onClick={() => setShowMenu(!showMenu)}
+      />
+      <ul
+        className={`nav_links fixed md:static ${
+          showMenu
+            ? "flex flex-col pt-16 pl-14 text-2xl text-white font-semibold gap-14 gradient__effect w-[80%] h-screen left-0 bottom-0 top-0 z-50 ease-in duration-500"
+            : "hidden"
+        }`}
+      >
         {navLinks?.map((item) => (
           <li key={item?.key}>
             {" "}
@@ -25,7 +42,7 @@ const Header = ({ navLinks, session }) => {
           <Button
             variant="gradient"
             size="sm"
-            className="bg-secondary capitalize text-sm"
+            className="gradient__effect capitalize text-sm"
             onClick={() => {
               signOut();
             }}
@@ -34,15 +51,19 @@ const Header = ({ navLinks, session }) => {
           </Button>
         ) : (
           <Link href="/login">
-          <Button
-            variant="gradient"
-            size="sm"
-            className="bg-secondary capitalize text-sm"
-          >
-            Login
-          </Button>
+            <Button
+              variant="gradient"
+              size="sm"
+              className="gradient__effect capitalize text-sm"
+            >
+              Login
+            </Button>
           </Link>
         )}
+        <RxCross2
+          className="text-white text-3xl block md:hidden cursor-pointer absolute top-5 right-5"
+          onClick={() => setShowMenu(!showMenu)}
+        />
       </ul>
     </div>
   );

@@ -7,9 +7,9 @@ import Link from "next/link";
 
 const MakeAppointment = () => {
   return (
-    <div className={`${styles.appointment__bg} py-28`}>
-      <div className="w-[70%] m-auto relative">
-        <div className="absolute top-[-220px] left-[-80px]">
+    <div className={`${styles.appointment__bg} py-20 lg:py-28`}>
+      <div className="w-[90%] lg:w-[70%] m-auto relative">
+        <div className="absolute top-[-220px] left-[-80px] hidden lg:block">
           <Image
             src={doctor}
             alt=""
@@ -17,8 +17,8 @@ const MakeAppointment = () => {
             unoptimized={true}
           />
         </div>
-        <div className="flex justify-end">
-          <div className="w-1/2">
+        <div className="lg:flex justify-end">
+          <div className="lg:w-1/2">
             <h6 className="subHeading mb-3">Appointment</h6>
             <h4 className="font-semibold text-4xl text-white">
               Make an appointment Today

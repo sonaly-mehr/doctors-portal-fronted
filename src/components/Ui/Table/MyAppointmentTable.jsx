@@ -21,6 +21,7 @@ import {
 import { useCancelAppointmentMutation } from "@/redux/api/bookAppointmentApi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Link from "next/link";
 
 const TABLE_HEAD = [
   "Services",
@@ -179,12 +180,14 @@ const MyAppointmentTable = (session) => {
                     <td className={`${classes} flex gap-4 h-[57px]`}>
                       {appointment?.status !== "cancelled" &&
                         appointment?.payment?.paymentStatus !== "paid" && (
+                          <Link href={`/my-appointments/${appointment?.id}/checkout`}>
                           <Chip
                             size="sm"
                             value="pay"
                             variant="ghost"
                             className="text-[#1B5E20] bg-[#D5EBDA] cursor-pointer"
                           />
+                          </Link>
                         )}
                       {appointment?.status !== "cancelled" &&
                         appointment?.status !== "completed" && (

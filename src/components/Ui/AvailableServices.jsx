@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../app/styles/index.module.css";
 import Image from "next/image";
 import clinic from "../../assets/chair 1.png";
@@ -7,10 +7,14 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Button from "./Button";
 import BookAppointment from "./Modal/BookAppointment";
+import { useRouter } from "next/navigation";
 
 const AvailableServices = ({ availableServices, session }) => {
+  const router = useRouter();
+
   const [value, onChange] = useState(new Date());
   const [dateValue, setDateValue] = useState(new Date());
+  
 
   console.log("available Services", availableServices);
   const [open, setOpen] = useState(false);
@@ -23,10 +27,14 @@ const AvailableServices = ({ availableServices, session }) => {
   const [singleId, setSingleId] = useState("");
   console.log("single id", singleId);
 
+  useEffect(()=> {
+    router.push(`/appointment?slotDate=${date}`)
+  }, [date, router])
+
   return (
-    <div className="relative mb-[15rem]">
+    <div className="relative mb-[35rem] lg:mb-[15rem]">
       <div className={`${styles.landing__bg} h-screen`}>
-        <div className="w-3/4 m-auto flex justify-around items-center pt-8">
+        <div className="w-[90%] lg:w-3/4 m-auto flex justify-around items-center pt-8">
           <div>
             <Calendar
               onChange={onChange}
@@ -40,7 +48,7 @@ const AvailableServices = ({ availableServices, session }) => {
           </div>
         </div>
       </div>
-      <div className="w-3/4 mt-5 pt-10 pb-16 px-10 absolute top-[400px] left-1/2 -translate-x-1/2 bg-white shadow-[0px_0px_10px_0px_#e2e2e2;] rounded-xl">
+      <div className="w-[90%] lg:w-3/4 mt-5 lg:pt-5 pt-10 pb-12 lg:pb-16 px-5 lg:px-10 absolute top-[350px] lg:top-[400px] left-1/2 -translate-x-1/2 bg-white shadow-[0px_0px_10px_0px_#e2e2e2;] rounded-xl">
         <div className="text-center">
           <h4 className="text-[22px] text-green font-normal">
             Available Services on {date}
@@ -50,8 +58,10 @@ const AvailableServices = ({ availableServices, session }) => {
           </span>
         </div>
 
-        <div className="flex gap-6 flex-wrap justify-between">
-          {availableServices?.data?.map((service, index) => (
+        {availableServices?.data?.length ===0 && <p className="capitalize w-full text-center font-semibold text-xl text-[#3c3c3c]">No available Service on this date!</p>}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          {availableServices?.data?.length !==0 && availableServices?.data?.map((service, index) => (
+
             <div
               key={index}
               className={`${styles.services__shaddow} text-center basis-[31%] py-10 bg-white rounded-2xl`}
