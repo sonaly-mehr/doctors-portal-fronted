@@ -2,13 +2,11 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "@material-tailwind/react";
-import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
 
 const Header = ({ navLinks, session }) => {
-  const router = useRouter();
   console.log("session", session);
   const [showMenu, setShowMenu] = useState(false);
 
